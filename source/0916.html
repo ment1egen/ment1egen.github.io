@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>0916 css</title>
+        <style>
+            body
+            {
+                background-image: url("Earbuds.png");
+            }
+            .imgbox
+            {
+                float: left;
+                text-align: center;
+                width: 120px;
+                border: 1px solid gray;
+                margin: 4px;
+                padding: 6px;
+            }
+            button
+            {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="imgbox" id="imgbox1">Jam
+            <img src="../apple-icon-precomposed.png" alt="Jam" style="width: 100%;">
+            <button onclick="removeElement()">Remove</button>
+        </div>
+        <div class="imgbox" id="imgbox2">Sunglasses
+            <img src="Backpack_Graybanns.png" alt="Sunglasses" style="width: 100%;">
+            <button onclick="changeVisivility()">Hide</button>
+        </div>
+        <div class="imgbox" id="imgbox1">Gib me more!
+            <img src="Earbuds.png" alt="Earbuds" style="width: 100%;">
+            <button onclick="resetElement()">Reset All</button>
+        </div>
+
+        <script>
+            function removeElement() {
+              document.getElementById("imgbox1").style.display = "none";
+            }
+            
+            function changeVisibility() {
+              document.getElementById("imgbox2").style.visibility = "hidden";
+            }
+            
+            function resetElement() {
+              document.getElementById("imgbox1").style.display = "block";
+              document.getElementById("imgbox2").style.visibility = "visible";
+            }
+            </script>
+    </body>
+</html>
