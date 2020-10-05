@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Timer</title>
+        <script>
+            var startTime, timer;
+
+            function start()
+            {
+                startTime = new Date();
+                timer = setInterval(displayTime, 1000);
+            }
+
+            function displayTime()
+            {
+                var now = new Date();
+                var elapse = ((now - startTime)/1000).toFixed(0);
+                document.getElementById("displayNow").innerHTML = now.toLocaleTimeString();
+                document.getElementById("elapseTime").innerHTML = elapse;
+            }
+
+            function stop()
+            {
+                clearInterval(timer);
+            }
+        </script>
+    </head>
+    <body>
+        <p id="displayNow">0</p>
+        <p id="elapseTime">0</p>
+        <input type="button" value="start" id="start" onclick="start()">
+        <input type="button" value="stop" id="stop" onclick="stop()">
+    </body>
+</html>

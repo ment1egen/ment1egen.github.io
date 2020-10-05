@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Timer</title>
+        <script>
+            var startTime, timer;
+
+            function start()
+            {
+                startTime = new Date();
+                timer = setInterval(displayTime, 1000);
+            }
+
+            function displayTime()
+            {
+                now = new Date();
+
+                var elapse = ((now - startTime)/1000).toFixed(0);
+                document.getElementById("elapseTime").innerHTML = elapse;
+
+                if(elapse == "5" || elapse == "10")
+                {
+                    winOpen();
+                }
+            }
+
+            function winOpen()
+            {
+                win1 = window.open("https://ment1egen.github.io/", "", "_blank");
+            }
+        </script>
+    </head>
+    <body>
+        <p id="elapseTime">0</p>
+        <input type="button" value="start" id="start" onclick="start()">
+    </body>
+</html>

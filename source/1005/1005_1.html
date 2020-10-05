@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>1005 js</title>
+        <script>
+            function displayTime()
+            {
+                var d = new Date();
+                alert(d);
+            }
+            window.onload = function() {
+                var btn = document.getElementById("btn");
+                btn.onclick = displayTime;
+            };
+        </script>
+    </head>
+    <body>
+        <input type="button" value="click" id="btn">
+    </body>
+</html>
