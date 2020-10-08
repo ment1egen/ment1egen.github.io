@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <title>pair double two, for some even number is exist in your keyboard-pressing finger's posibility?</title>
+        <script>
+            function checkIt()
+            {
+                var value = parseInt(document.getElementById("num").value);
+                if(value%2 == 0)
+                {
+                    document.getElementById("demoman").innerHTML = "Yes, It is an even number.";
+                }
+                else
+                {
+                    document.getElementById("demoman").innerHTML = "No, It isn't an even number.";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <p>Enter an (even)|(not even) number</p>
+        <input type="text" id="num"/>
+        <p id="demoman"></p>
+        <input type="button" id="check" value = "check it!" onclick="checkIt()"/>
+    </body>
+</html>

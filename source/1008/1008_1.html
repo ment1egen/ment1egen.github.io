@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <title>n!=nPn</title>
+        <script>
+            function nPn()
+            {
+                var value = parseInt(document.getElementById("num").value);
+                var result = 1;
+                for(i = 1; i <= value; i++)
+                {
+                    result *= i;
+                }
+                document.getElementById("demoman").innerHTML = result;
+            }
+        </script>
+    </head>
+    <body>
+        <p>facktoriahl</p>
+        <input type="text" id="num"/>
+        <p id="demoman"></p>
+        <input type="button" id="check" value = "recursive is not a option." onclick="nPn()"/>
+    </body>
+</html>

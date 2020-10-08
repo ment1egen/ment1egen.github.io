@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <title>prime numbers</title>
+        <script>
+            function prime()
+            {
+                var table = [false];
+                for(i = 0; i < 99; i++)
+                {
+                    table.push(true);
+                }
+                // Math.floor(Math.sprt(100))
+                for(i = 2; i <= 10; i++)
+                {
+                    for(j = 2; j <= 100/i; j++)
+                    {
+                        table[i*j - 1] = false;
+                    }
+                }
+                
+                var text = "";
+
+                for(i = 0; i < 100; i++)
+                {
+                    if(table[i] == true)
+                    {
+                        text += (String)(i+1);
+                        text += ", ";
+                    }
+                }
+                
+                var text = "<ul>";
+                table.forEach(text += "<li>" + value + "</li>");
+                var text = "</ul>";
+
+                document.getElementById("demoman").innerHTML = text;
+            }
+        </script>
+    </head>
+    <body onload="prime()">
+        <p>prime numbers</p>
+        <p id="demoman"></p>
+    </body>
+</html>
