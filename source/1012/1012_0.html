@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<!--학번(yyyymmdd)_1.html -->
+
+<head>
+    <title>1012_0</title>
+    <meta charset="utf-8">
+    <script>
+        function add1(x) {
+            return x = x + 1;
+        }
+        var a = 3;
+        var b = add1(a);
+        console.log("a = " + a + ", b = " + b);
+
+        function add2(p) {
+            p.x = p.x + 2;
+            p.y = p.y + 2;
+            return p;
+        }
+
+        var p = {
+            x: 3,
+            y: 4
+        };
+        var q = add2(p);
+        console.log(p, q);
+
+        var circle = {
+            center: {
+                x: 0,
+                y: 0
+            },
+            radius: 3,
+            area: function() {
+                return Math.PI * this.radius * this.radius;
+            }
+        };
+        console.log(circle.area());
+
+        circle.translate = function(a, b) {
+            this.center.x = this.center.x + a;
+            this.center.y = this.center.y + b;
+        }
+        circle.translate(1, 2);
+        console.log(circle.center);
+        var obj = {
+            say: function() {
+                console.log(this);
+                var f = function() {
+                    console.log(this);
+                };
+                f();
+                var g = () => console.log(this);
+                g();
+            }
+        };
+        obj.say();
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
