@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Canvas 2D API</title>
+    <meta charset="utf-8">
+    <script>
+        window.onload = function () {
+            var canvas = document.getElementById('canvas'); 
+            if (canvas.getContext) {
+                var ctx = canvas.getContext('2d');
+                ctx.beginPath(); 
+                ctx.moveTo(0, 0); 
+                ctx.lineTo(100, 0); 
+                ctx.lineTo(0, 100); 
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.moveTo(110, 110);
+                ctx.lineTo(110, 10);
+                ctx.lineTo(10, 110);
+                ctx.lineTo(110, 110);
+                ctx.stroke();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <canvas id="canvas" height="400" width="400">This browser doesn't support canvas</canvas>
+</body>
+
+</html>
