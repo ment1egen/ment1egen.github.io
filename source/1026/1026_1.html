@@ -1,0 +1,64 @@
+<html>
+        <head>
+            <title>1026 js</title>
+            <script>
+                //stroke() 테스트
+                function asdf()
+                {
+                    var canvas1 = document.getElementById("canvas1"); 
+                    var context1 = canvas1.getContext("2d");
+                    //첫번째 테스트
+                    var x = canvas1.width / 5;
+                    var y = canvas1.height / 4;
+                    var radius = 20;
+                    var startAngle = 0 * Math.PI / 180;
+                    var endAngle = 270 * Math.PI / 180; context1.beginPath();
+                    for(i = 1; i <= 4; i++)
+                    {
+                        let rX = x * i;
+                        let rY = y;
+                        let rClose = (Boolean)(i%2);
+                        let rIsAnti = false;
+                        if(i >= 3)
+                        {
+                            rIsAnti = true;
+                        }
+
+                        context1.beginPath();
+                        context1.arc(rX, rY, radius, startAngle, endAngle, rIsAnti); 
+                        if(rClose)
+                        {
+                        context1.closePath();
+                        }
+                        context1.stroke();
+                    }
+                    
+                    var canvas2 = document.getElementById("canvas2"); 
+                    var context2 = canvas2.getContext("2d");
+                    for(i = 1; i <= 4; i++)
+                    {
+                        let rX = x * i;
+                        let rY = y;
+                        let rClose = (Boolean)(i%2);
+                        let rIsAnti = false;
+                        if(i >= 3)
+                        {
+                            rIsAnti = true;
+                        }
+
+                        context2.beginPath();
+                        context2.arc(rX, rY, radius, startAngle, endAngle, rIsAnti); 
+                        if(rClose)
+                        {
+                        context2.closePath();
+                        }
+                        context2.fill();
+                    }
+                }
+            </script>
+        </head>
+        <body onload="asdf()">
+            <canvas id="canvas1" height="400" width="400">This browser doesn't support canvas</canvas>
+            <canvas id="canvas2" height="400" width="400">This browser doesn't support canvas</canvas>
+        </body>
+    </html>
