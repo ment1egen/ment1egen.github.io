@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Canvas 2D API</title>
+    <meta charset="utf-8">
+    <script>
+        function drawText() {
+            var canvas = document.getElementById("myCanvas"); 
+            var context = canvas.getContext("2d"); 
+            context.font = "30px Comic Sans MS"; 
+            context.fillStyle = "red";
+            context.textAlign = "center";
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.fillText("Hallo wolord", 100, 50);
+        }
+
+        function drawPicture()
+        {
+            var canvas = document.getElementById("myCanvas"); 
+            var ctx = canvas.getContext("2d"); 
+            var img = document.getElementById("scream");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 10, 10);
+        }
+    </script>
+</head>
+
+<body onload="drawText()">
+    <p>Image to use:</p>
+    <img id="scream" width="220" height="277" src="pic_the_scream.jpg" alt="The Scream">
+    </br>
+    <button onclick="drawText()">draw Text!</button>
+    <button onclick="drawPicture()">draw IMAGE!</button>
+    <p>Canvas:</p>
+    <canvas id="myCanvas" width="240" height="297" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML5 canvas tag.</canvas>
+
+</body>
+
+</html>
